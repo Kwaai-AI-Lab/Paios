@@ -31,12 +31,16 @@ source paios/.venv/bin/activate
 python3 -m paios
 ```
 
-_Windows_
+_Windows (PowerShell)_
 
 ```sh
 python .\paios\scripts\setup_environment.py (only on first run)
 .\paios\.venv\Scripts\Activate.ps1
 python -m paios
+```
+**_NOTE:_** It may be necessary to set the Windows execution policy; the following command sets the policy to "Unrestricted" for the current PowerShell session only:
+```sh
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
 ```
 
 Visit [http://localhost:3080/](http://localhost:3080/)
@@ -54,12 +58,12 @@ git clone https://github.com/Kwaai-AI-Lab/paios.git
 Build the frontend:
 
 ```sh
-cd frontend
+cd paios/frontend
 npm run build
 cd ..
 ```
 
-Run the uvicorn server:
+Run the uvicorn server from the virtual environment:
 
 ```sh
 python -m paios
